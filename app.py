@@ -36,8 +36,9 @@ model=joblib.load("new5.joblib")
 
 if st.sidebar.button("Predict"):
     prediction=model.predict(input_data)[0]
+    st.subheader("prediction result")
 
-    if st.subheader("prediction result"):
+    if prediction==1:
         st.error("patient likely to have heart disease")
     else:
         st.success("patien unlikely to have heart disease")
